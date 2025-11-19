@@ -18,7 +18,7 @@ export default function RestaurantCard(props: RestaurantCardProps) {
   const bestDeal = getBestDeal(deals);
 
   return (
-    <div className="relative flex flex-col w-full items-start gap-1">
+    <div className="relative flex flex-col w-full justify-start text-start items-start gap-1 p-2 rounded-sm hover:bg-zinc-100">
       <div className="absolute top-2 left-2 flex flex-col items-start p-1 bg-orange-700 rounded-sm text-white">
         <span className="text-sm font-semibold">{bestDeal?.discount}% off {bestDeal?.dineIn && " - Dine In"}</span>
         <span className="text-[0.6rem]">Anytime today</span>
