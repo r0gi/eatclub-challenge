@@ -5,6 +5,8 @@ export type Deal = {
   lightning: string;    // "true" | "false"
   open?: string;
   close?: string;
+  start?: string;
+  end?: string;
   qtyLeft: string;
 }
 
