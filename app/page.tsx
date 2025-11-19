@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "@/components/RestaurantCard";
 import { Restaurant } from "@/types";
 import { SearchIcon } from "lucide-react";
+import { getBestDeal } from "@/utils";
 
 export default function Home() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
@@ -33,6 +34,11 @@ export default function Home() {
       }
     })();
   }, []);
+
+  // sort restaurants by best deals first
+  restaurants.sort((a, b) =>
+    Number(getBestDeal(b.deals)?.discount ?? 0) - Number(getBestDeal(a.deals)?.discount ?? 0)
+  );
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
