@@ -40,7 +40,7 @@ export default function RestaurantPage() {
     })();
   }, [id]);
 
-  if (loading) return <div className="p-4 w-full flex justify-center">Loading…</div>;
+  if (loading) return <div />;
 
   if (error || !restaurant)
     return <div className="p-4 text-red-600 text-sm">{error || "Not found"}</div>;
