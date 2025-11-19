@@ -45,6 +45,10 @@ export default function RestaurantPage() {
   if (error || !restaurant)
     return <div className="p-4 text-red-600 text-sm">{error || "Not found"}</div>;
 
+  const sortedDeals = [...restaurant.deals].sort((a, b) =>
+    Number(b?.discount ?? 0) - Number(a?.discount ?? 0)
+  );
+
   return (
     <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans">
       <main className="relative flex min-h-screen w-full max-w-3xl flex-col items-center pb-8 bg-white">
@@ -95,7 +99,7 @@ export default function RestaurantPage() {
           </div>
         </section>
         <section className="mt-4 px-4 sm:px-8 w-full flex flex-col gap-2">
-          {restaurant.deals.map(deal => (
+          {sortedDeals.map(deal => (
             <div key={deal.objectId} className="flex justify-between items-center w-full py-2 border-t border-gray-200">
               <div className="flex flex-col">
                 <span className="text-2xl text-red-700 font-bold">{deal.lightning && "⚡ "}{deal.discount}% Off</span>
