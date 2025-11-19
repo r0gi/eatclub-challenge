@@ -4,7 +4,7 @@ import { useParams } from "next/navigation";
 import { Restaurant } from "@/types";
 import { useEffect, useState } from "react";
 import ImageWithFallback from "@/components/ImageWithFallback";
-import { BookMarkedIcon, Clock3Icon, HeartIcon, MapPinnedIcon, PhoneCallIcon, StarIcon, ZapIcon } from "lucide-react";
+import { BookMarkedIcon, Clock3Icon, HeartIcon, MapPinnedIcon, PhoneCallIcon, StarIcon } from "lucide-react";
 import { getDealTimeString } from "@/utils";
 
 
