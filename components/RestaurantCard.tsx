@@ -1,6 +1,6 @@
 import { Restaurant } from "@/types";
 import { HeartIcon } from "lucide-react";
-import Image from "next/image";
+import ImageWithFallback from "./ImageWithFallback";
 
 interface RestaurantCardProps {
     restaurant: Restaurant;
@@ -25,7 +25,13 @@ export default function RestaurantCard(props: RestaurantCardProps) {
         <span className="text-[0.6rem]">Anytime today</span>
       </div>
       <div className="flex w-full h-32 mb-2">
-        <Image src={imageLink} alt="Restaurant image" width={750} height={550} className="w-full object-cover rounded-sm"/>
+        <ImageWithFallback
+          src={imageLink}
+          alt="Restaurant image"
+          width={750}
+          height={550}
+          className="w-full object-cover rounded-sm"
+        />
       </div>
       <div className="flex w-full justify-between items-center">
         <h3 className="font-bold">{name}</h3>
